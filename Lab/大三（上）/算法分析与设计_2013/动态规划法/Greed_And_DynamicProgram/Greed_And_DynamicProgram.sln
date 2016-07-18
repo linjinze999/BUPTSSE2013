@@ -1,0 +1,20 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 11.00
+# Visual Studio 2010
+Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "Greed_And_DynamicProgram", "Greed_And_DynamicProgram\Greed_And_DynamicProgram.vcxproj", "{53BB1C57-1B6D-44A6-AA3E-B8E9BE03E65C}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Win32 = Debug|Win32
+		Release|Win32 = Release|Win32
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{53BB1C57-1B6D-44A6-AA3E-B8E9BE03E65C}.Debug|Win32.ActiveCfg = Debug|Win32
+		{53BB1C57-1B6D-44A6-AA3E-B8E9BE03E65C}.Debug|Win32.Build.0 = Debug|Win32
+		{53BB1C57-1B6D-44A6-AA3E-B8E9BE03E65C}.Release|Win32.ActiveCfg = Release|Win32
+		{53BB1C57-1B6D-44A6-AA3E-B8E9BE03E65C}.Release|Win32.Build.0 = Release|Win32
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+EndGlobal

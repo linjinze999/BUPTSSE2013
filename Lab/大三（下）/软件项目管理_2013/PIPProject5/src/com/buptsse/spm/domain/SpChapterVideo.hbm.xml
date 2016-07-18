@@ -1,0 +1,27 @@
+<?xml version="1.0"?>
+<!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+"http://www.hibernate.org/dtd/hibernate-mapping-3.0.dtd">
+<hibernate-mapping package="com.buptsse.spm.domain">
+	<class name="SpChapterVideo" table="sp_chapter_video">
+		<cache usage="read-write" /> <!-- 缓存 -->
+		<id name="id" column="id" type="string">
+			<generator class="increment" />
+		</id>
+		<property name="chapter_id" column="chapter_id" 
+			type="integer" />
+		<property name="video_time" column="video_time" 
+			type="integer" />
+		<property name="video_name_number" column="video_name_number" length="32"
+			type="string" />
+		<property name="video_name" column="video_name" length="128"
+			type="string" />
+		<property name="video_desc" column="video_desc" length="512"
+			type="string" />
+		<property name="video_path" column="video_path" length="512"
+			type="string" />
+		<property name="video_pic" column="video_pic" length="512"
+			type="string" />
+		<property name="video_step_order" column="video_step_order"
+			type="integer" />
+	</class>
+</hibernate-mapping>

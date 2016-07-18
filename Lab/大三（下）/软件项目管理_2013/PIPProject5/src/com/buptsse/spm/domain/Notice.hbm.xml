@@ -1,0 +1,23 @@
+<?xml version="1.0"?>
+<!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+"http://www.hibernate.org/dtd/hibernate-mapping-3.0.dtd">
+<hibernate-mapping package="com.buptsse.spm.domain">
+	<class name="Notice" table="notice">
+		<cache usage="read-write" /> <!-- 缓存 -->
+		<id name="id" column="id_notice" type="int">
+			<generator class="native" />
+		</id>
+		<property name="title" column="title_notice" length="128"
+			type="string" />
+		<property name="content" column="content_notice" length="1024"
+			type="string" />
+		<property name="type" column="type_notice" length="15"
+			type="string" />
+		<property name="receiveUserId" column="receive_userid_notice" 
+			type="integer" />
+		<property name="receiveUserRole" column="receive_userrole_notice" length="15"
+			type="string" />
+		<property name="sendUserId" column="send_userid_notice" 
+			type="integer" />
+	</class>
+</hibernate-mapping>

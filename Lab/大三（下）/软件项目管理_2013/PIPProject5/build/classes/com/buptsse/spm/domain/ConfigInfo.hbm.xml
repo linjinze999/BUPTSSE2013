@@ -1,0 +1,23 @@
+<?xml version="1.0"?>
+<!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+"http://www.hibernate.org/dtd/hibernate-mapping-3.0.dtd">
+<hibernate-mapping package="com.buptsse.spm.domain">
+	<class name="ConfigInfo" table="ConfigInfo">
+		<cache usage="read-write" /> <!-- 缓存 -->
+		<id name="id" column="id" type="int">
+			<generator class="increment"/>
+		</id>
+		<property name="configType" column="configType" 
+			type="string" />
+		<property name="configCode" column="configCode" 
+			type="string" />
+		<property name="configValue" column="configValue"  
+			type="string" />
+		<property name="configDesc" column="configDesc"  
+			type="string" />
+		<property name="validate" column="validate"  
+			type="string" />
+		<property name="remark" column="remark"  
+			type="string" />						
+	</class>
+</hibernate-mapping>

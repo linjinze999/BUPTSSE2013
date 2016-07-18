@@ -1,0 +1,10 @@
+int add(){
+	int a;//定义一个变量
+	int b=0;
+	for(a=0;a<=10;a++)
+	{
+		if(a&&b)
+			b+=a;
+	}
+	return b;
+}

@@ -1,0 +1,205 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project DefaultTargets="Build" ToolsVersion="4.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <ItemGroup Label="ProjectConfigurations">
+    <ProjectConfiguration Include="Debug|Win32">
+      <Configuration>Debug</Configuration>
+      <Platform>Win32</Platform>
+    </ProjectConfiguration>
+    <ProjectConfiguration Include="Release|Win32">
+      <Configuration>Release</Configuration>
+      <Platform>Win32</Platform>
+    </ProjectConfiguration>
+  </ItemGroup>
+  <PropertyGroup Label="Globals">
+    <ProjectGuid>{74DE1934-5B08-46DA-A673-8B453D74E4A3}</ProjectGuid>
+    <RootNamespace>JWGL</RootNamespace>
+    <Keyword>MFCProj</Keyword>
+  </PropertyGroup>
+  <Import Project="$(VCTargetsPath)\Microsoft.Cpp.Default.props" />
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'" Label="Configuration">
+    <ConfigurationType>Application</ConfigurationType>
+    <UseDebugLibraries>true</UseDebugLibraries>
+    <CharacterSet>Unicode</CharacterSet>
+    <UseOfMfc>Dynamic</UseOfMfc>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release|Win32'" Label="Configuration">
+    <ConfigurationType>Application</ConfigurationType>
+    <UseDebugLibraries>false</UseDebugLibraries>
+    <WholeProgramOptimization>true</WholeProgramOptimization>
+    <CharacterSet>Unicode</CharacterSet>
+    <UseOfMfc>Dynamic</UseOfMfc>
+  </PropertyGroup>
+  <Import Project="$(VCTargetsPath)\Microsoft.Cpp.props" />
+  <ImportGroup Label="ExtensionSettings">
+  </ImportGroup>
+  <ImportGroup Label="PropertySheets" Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">
+    <Import Project="$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props" Condition="exists('$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props')" Label="LocalAppDataPlatform" />
+  </ImportGroup>
+  <ImportGroup Label="PropertySheets" Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">
+    <Import Project="$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props" Condition="exists('$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props')" Label="LocalAppDataPlatform" />
+  </ImportGroup>
+  <PropertyGroup Label="UserMacros" />
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">
+    <LinkIncremental>true</LinkIncremental>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">
+    <LinkIncremental>false</LinkIncremental>
+  </PropertyGroup>
+  <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">
+    <ClCompile>
+      <PrecompiledHeader>Use</PrecompiledHeader>
+      <WarningLevel>Level3</WarningLevel>
+      <Optimization>Disabled</Optimization>
+      <PreprocessorDefinitions>WIN32;_WINDOWS;_DEBUG;%(PreprocessorDefinitions)</PreprocessorDefinitions>
+    </ClCompile>
+    <Link>
+      <SubSystem>Windows</SubSystem>
+      <GenerateDebugInformation>true</GenerateDebugInformation>
+    </Link>
+    <Midl>
+      <MkTypLibCompatible>false</MkTypLibCompatible>
+      <ValidateAllParameters>true</ValidateAllParameters>
+      <PreprocessorDefinitions>_DEBUG;%(PreprocessorDefinitions)</PreprocessorDefinitions>
+    </Midl>
+    <ResourceCompile>
+      <Culture>0x0804</Culture>
+      <PreprocessorDefinitions>_DEBUG;%(PreprocessorDefinitions)</PreprocessorDefinitions>
+      <AdditionalIncludeDirectories>$(IntDir);%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+    </ResourceCompile>
+  </ItemDefinitionGroup>
+  <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">
+    <ClCompile>
+      <WarningLevel>Level3</WarningLevel>
+      <PrecompiledHeader>Use</PrecompiledHeader>
+      <Optimization>MaxSpeed</Optimization>
+      <FunctionLevelLinking>true</FunctionLevelLinking>
+      <IntrinsicFunctions>true</IntrinsicFunctions>
+      <PreprocessorDefinitions>WIN32;_WINDOWS;NDEBUG;%(PreprocessorDefinitions)</PreprocessorDefinitions>
+    </ClCompile>
+    <Link>
+      <SubSystem>Windows</SubSystem>
+      <GenerateDebugInformation>true</GenerateDebugInformation>
+      <EnableCOMDATFolding>true</EnableCOMDATFolding>
+      <OptimizeReferences>true</OptimizeReferences>
+    </Link>
+    <Midl>
+      <MkTypLibCompatible>false</MkTypLibCompatible>
+      <ValidateAllParameters>true</ValidateAllParameters>
+      <PreprocessorDefinitions>NDEBUG;%(PreprocessorDefinitions)</PreprocessorDefinitions>
+    </Midl>
+    <ResourceCompile>
+      <Culture>0x0804</Culture>
+      <PreprocessorDefinitions>NDEBUG;%(PreprocessorDefinitions)</PreprocessorDefinitions>
+      <AdditionalIncludeDirectories>$(IntDir);%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+    </ResourceCompile>
+  </ItemDefinitionGroup>
+  <ItemGroup>
+    <None Include="001.bmp" />
+    <None Include="ReadMe.txt" />
+    <None Include="res\JWGL.ico" />
+    <None Include="res\JWGL.rc2" />
+  </ItemGroup>
+  <ItemGroup>
+    <ClInclude Include="BGAddStudentUser.h" />
+    <ClInclude Include="BGAddTeacherUser.h" />
+    <ClInclude Include="BGModifyStudentInformation.h" />
+    <ClInclude Include="BGModifyTeacherInfoemation.h" />
+    <ClInclude Include="BGPage1.h" />
+    <ClInclude Include="BGPage2.h" />
+    <ClInclude Include="BGPage3.h" />
+    <ClInclude Include="BGPage4.h" />
+    <ClInclude Include="BGPage5.h" />
+    <ClInclude Include="BGSearchSDFuzzy.h" />
+    <ClInclude Include="BGSearchTCFuzzy.h" />
+    <ClInclude Include="BGSeeStudentInformation.h" />
+    <ClInclude Include="BGSeeTeacherInformation.h" />
+    <ClInclude Include="BGStat.h" />
+    <ClInclude Include="BGWindow.h" />
+    <ClInclude Include="ClassCourseAndMessage.h" />
+    <ClInclude Include="ClassStudent.h" />
+    <ClInclude Include="ClassTeacher.h" />
+    <ClInclude Include="JWGL.h" />
+    <ClInclude Include="JWGLDlg.h" />
+    <ClInclude Include="Resource.h" />
+    <ClInclude Include="SDModifySDPassword.h" />
+    <ClInclude Include="stdafx.h" />
+    <ClInclude Include="StudentMessageForTeacherWindow.h" />
+    <ClInclude Include="StudentPage1.h" />
+    <ClInclude Include="StudentPage2.h" />
+    <ClInclude Include="StudentPage3.h" />
+    <ClInclude Include="StudentPage4.h" />
+    <ClInclude Include="StudentWindow.h" />
+    <ClInclude Include="targetver.h" />
+    <ClInclude Include="TeacherAddCourseWindow.h" />
+    <ClInclude Include="TeacherMessageForStudentWindow.h" />
+    <ClInclude Include="TeacherModifyPassword.h" />
+    <ClInclude Include="TeacherPage1.h" />
+    <ClInclude Include="TeacherPage2.h" />
+    <ClInclude Include="TeacherPage3.h" />
+    <ClInclude Include="TeacherPage4.h" />
+    <ClInclude Include="TeacherScoreAdd.h" />
+    <ClInclude Include="TeacherScoreModify.h" />
+    <ClInclude Include="TeacherScoreSearch.h" />
+    <ClInclude Include="TeacherScoreSee.h" />
+    <ClInclude Include="TeacherWindow.h" />
+    <ClInclude Include="TIP1.h" />
+    <ClInclude Include="TIP2.h" />
+    <ClInclude Include="TIP3.h" />
+  </ItemGroup>
+  <ItemGroup>
+    <ClCompile Include="BGAddStudentUser.cpp" />
+    <ClCompile Include="BGAddTeacherUser.cpp" />
+    <ClCompile Include="BGModifyStudentInformation.cpp" />
+    <ClCompile Include="BGModifyTeacherInfoemation.cpp" />
+    <ClCompile Include="BGPage1.cpp" />
+    <ClCompile Include="BGPage2.cpp" />
+    <ClCompile Include="BGPage3.cpp" />
+    <ClCompile Include="BGPage4.cpp" />
+    <ClCompile Include="BGPage5.cpp" />
+    <ClCompile Include="BGSearchSDFuzzy.cpp" />
+    <ClCompile Include="BGSearchTCFuzzy.cpp" />
+    <ClCompile Include="BGSeeStudentInformation.cpp" />
+    <ClCompile Include="BGSeeTeacherInformation.cpp" />
+    <ClCompile Include="BGStat.cpp" />
+    <ClCompile Include="BGWindow.cpp" />
+    <ClCompile Include="JWGL.cpp" />
+    <ClCompile Include="JWGLDlg.cpp" />
+    <ClCompile Include="SDModifySDPassword.cpp" />
+    <ClCompile Include="stdafx.cpp">
+      <PrecompiledHeader Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">Create</PrecompiledHeader>
+      <PrecompiledHeader Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">Create</PrecompiledHeader>
+    </ClCompile>
+    <ClCompile Include="StudentMessageForTeacherWindow.cpp" />
+    <ClCompile Include="StudentPage1.cpp" />
+    <ClCompile Include="StudentPage2.cpp" />
+    <ClCompile Include="StudentPage3.cpp" />
+    <ClCompile Include="StudentPage4.cpp" />
+    <ClCompile Include="StudentWindow.cpp" />
+    <ClCompile Include="TeacherAddCourseWindow.cpp" />
+    <ClCompile Include="TeacherMessageForStudentWindow.cpp" />
+    <ClCompile Include="TeacherModifyPassword.cpp" />
+    <ClCompile Include="TeacherPage1.cpp" />
+    <ClCompile Include="TeacherPage2.cpp" />
+    <ClCompile Include="TeacherPage3.cpp" />
+    <ClCompile Include="TeacherPage4.cpp" />
+    <ClCompile Include="TeacherScoreAdd.cpp" />
+    <ClCompile Include="TeacherScoreModify.cpp" />
+    <ClCompile Include="TeacherScoreSearch.cpp" />
+    <ClCompile Include="TeacherScoreSee.cpp" />
+    <ClCompile Include="TeacherWindow.cpp" />
+    <ClCompile Include="TIP1.cpp" />
+    <ClCompile Include="TIP2.cpp" />
+    <ClCompile Include="TIP3.cpp" />
+  </ItemGroup>
+  <ItemGroup>
+    <ResourceCompile Include="JWGL.rc" />
+  </ItemGroup>
+  <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
+  <ImportGroup Label="ExtensionTargets">
+  </ImportGroup>
+  <ProjectExtensions>
+    <VisualStudio>
+      <UserProperties RESOURCE_FILE="JWGL.rc" />
+    </VisualStudio>
+  </ProjectExtensions>
+</Project>

@@ -1,0 +1,303 @@
+<?xml version='1.0' encoding='UTF-8' ?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:h="http://xmlns.jcp.org/jsf/html">
+    <h:head>
+        <title>#{bundle1.WelcomeYuanLaiShiLi}</title>
+        <style>
+            .Top{background-color:white;color: black; width: 100%;height: 25px;z-index: 100;
+                font-family:宋体,Arail,tahoma;border-bottom: 1px solid black;position:fixed;
+                background-image: url(resources/image/webpage/TopBGImage.png);}
+            .Top a:link,a:visited{text-decoration: none;color: black;}
+            .Top a:hover{text-decoration:underline;}
+            .Top_Left {float: left;display: none;width:300px;height: 25px;margin-top: 0px;line-height:25px;}
+            .Top_Right {width: 500px;height: 25px;line-height:25px;float: right;text-align: center;}
+            .Top_Right li{float: left;width: 106px;list-style: none;}
+            .Top_Right li ul{position: absolute;width: 160px;display: none;text-align:center;border-bottom: 2px solid #ED145B;border-left: 2px solid #ED145B;
+                            border-right: 2px solid #ED145B;margin-top: 0px;margin-left: -50px;background-color:#FFF4F8; cursor: pointer;overflow: hidden;}
+            .Top_Right li ul li{width: 200px;height: 40px;border-top: 1px solid white;margin-left: -40px;line-height: 40px;}
+            
+            .MyBody{width: 1100px;background-color:white;height: 100%;margin-top:0px;margin:0 auto;}
+            
+            .Search{width: 80%;height: 100px;margin-top:0px;background:url(resources/image/webpage/Logo.png) no-repeat;background-position:10% 80%; }
+            
+            .FastSort{width: 98%;height: 30px;margin-left:1%;background-color:#ED145B;border-radius: 3px;color: white;}
+            .FastSort ul{width: 7%;height: 30px;line-height: 30px;float: left;border-right:1px solid #CA0143;margin-left: 1px;margin-top: 0px;}
+            .FastSort ul:hover{background-color: #D01D57;cursor:pointer;}
+            .FastSort ul a1{display: block;}
+            .FastSort ul a2{display: none;}
+            .FastSort ul:hover a1{display:none;}
+            .FastSort ul:hover a2{display:block;}
+            .FastSort ul:hover ul{display:block;}
+            .FastSort ul ul{display: none;position:relative;width: 98%;height: 181px;margin-left: -40px;border: 2px solid #ED145B;color: #666;z-index: 1;}
+            .FastSort ul ul li{position:relative;background-color:#FFF4F8;width: 154%;margin-left: -40px;height: 35px;border-top: 1px solid white;list-style:none;text-align: center;}
+            .FastSort ul ul li:hover{background-color:white;color:#ED145B;border-top: 1px solid #ED145B;border-bottom: 1px solid #ED145B;}
+            .FastSort ul ul li ul{position: absolute;margin-top:-32px;margin-left: 167px;width: 75px;visibility: hidden;}
+            .FastSort ul ul li:hover ul{visibility: visible;}
+            
+            .RelevantItem{width: 23%;height:610px;border: 1px solid #ED145B;float: right;margin-top: 33px;margin-right: 20px;}
+            .Item{width: 100%;}
+            .ItemBuy{width: 70%;height:400px;border: 1px solid #ED145B;margin-left:22px;display: inline-block;}
+            .ItemBuy_Img{width: 44%;height:340px;border: 1px solid #ED145B;margin:25px 0px 25px 25px;position:relative;display: inline-block;cursor: pointer;}
+            .ItemBuy_Word{width: 45%;height:340px;border: 1px solid #ED145B;margin:25px 25px 25px 0px;position:relative;float: right;}
+            .ItemBuy_Word_Buy{width:100%;height:80px;border-top: 1px solid grey;margin-top: 80px;}
+            .ItemIntroduction{width: 70%;height:200px;border: 1px solid #ED145B;margin-top:10px;margin-left:22px;}
+            
+            
+            .Bottom_FriendLink{width: 1100px;color: gray;font-size: 7px;margin:80px auto 0px auto;background-color: #F9E6F7;}
+            .Bottom_FriendLink a{margin-left: 13px;}
+            .Bottom_FriendLink a:link,a:visited{text-decoration: none;color: gray;}
+            .Bottom_FriendLink a:hover{text-decoration:underline;color: black;}
+        </style>
+    </h:head>
+    <h:body  style="background-color:#FFF4F8;margin: 0px;font-family:Arial,微软雅黑,楷体;" onload="checkLogin()">
+        <div class="Top">
+            <!-->Show Client <-->
+            <div class="Top_Left">
+                <!-->Client Image<-->
+                <li style=" list-style-image: url(resources/image/webpage/Avatar.jpg);">
+                    #{bundle1.WelcomeClient}
+                    <a href=""><!-->Link to Client<-->张学源</a>
+                </li>
+            </div>
+            <!-->Show Login,register,Cart <-->
+            <div class="Top_Right">
+                <li><a href="">#{bundle1.Login}</a></li><!-->Link to Login<-->
+                <li><a href="">#{bundle1.Register}</a></li><!-->Link to Register<-->
+                <li>
+                    <img src="resources/image/webpage/cart.png" alt="cart" style="margin-bottom: -3px;"/>
+                    <a href="" onmouseover="cart()" >#{bundle1.Cart}</a>
+                    <ul id="carts" onmouseout="hidCarts()" onmouseover="cart()">
+                        <li id="cart1" onmouseover="setOnCar(0)" onmouseout="setOutCar(0)"></li>
+                        <li id="cart2" onmouseover="setOnCar(1)" onmouseout="setOutCar(1)"></li>
+                        <li id="cart3" onmouseover="setOnCar(2)" onmouseout="setOutCar(2)"></li>
+                        <li id="cart4" onmouseover="setOnCar(3)" onmouseout="setOutCar(3)"></li>
+                        <li id="cart5" onmouseover="setOnCar(4)" onmouseout="setOutCar(4)"></li>
+                        <li id="cart6" onmouseover="setOnCar(5)" onmouseout="setOutCar(5)"></li>
+                    </ul>
+                </li>
+            </div>
+        </div>
+        
+        
+        <div class="MyBody">
+            <div class="Search">
+                <div style=" float: right;width: 486px;top:40px;position: relative;">
+                    <h:form>
+                        <div style="background:url(resources/image/webpage/Search.png) no-repeat left center;
+                            width: 400px;height: 30px;border: 3px solid #ED145B;border-radius: 7px 0px 0px 7px;">
+                            <h:inputText id="WhatSearch" style="float: right;font-size: 17px;width: 375px;height: 28px;border: none;"  value="" onfocus="this.value = '';"  onblur ="if (this.value === '';this.style.color='black';) {this.value = '#{bundle1.InputWhatSearch}';this.style.color='gray';}"></h:inputText> 
+                        </div>
+                        <h:commandButton style="width:80px;height: 36px;background-color: #ED145B;border-radius:0px 7px 7px 0px;border: 1px solid #ED145B;color: white;font-size: 17px;
+                                     cursor: pointer;float:right;margin-top: -36px;" value="#{bundle1.Search}" accesskey="enter" action="search()"></h:commandButton>
+                    </h:form>
+                </div>
+            </div>
+            
+            <div class="FastSort">
+                <ul style=" width: 12%;">
+                    <a1 onclick="ChangePageToCP(0,0,0,0,0,0)">#{bundle1.GoodsSort}#{bundle1.GoodsSort_unfold1}</a1>
+                    <a2 onclick="ChangePageToCP(0,0,0,0,0,0)">#{bundle1.GoodsSort}#{bundle1.GoodsSort_unfold2}</a2>
+                    <ul style="height: 216px;">
+                        <li style=" width: 131%;text-align: left">
+                            <a onclick="ChangePageToCP(0,6,6,6,6,6)">&nbsp;&nbsp;#{bundle1.Heart}&nbsp;&nbsp;#{bundle1.Brand}<a style="float:right">#{bundle1.GoodsSort_unfold1}</a></a>
+                            <ul>
+                                <li onclick="ChangePageToCP(1,6,6,6,6,6)"><a>#{bundle1.QuWan}</a></li>
+                                <li onclick="ChangePageToCP(2,6,6,6,6,6)"><a>#{bundle1.Hardway}</a></li>
+                                <li onclick="ChangePageToCP(3,6,6,6,6,6)"><a>#{bundle1.ZhuMingYuan}</a></li>
+                                <li onclick="ChangePageToCP(4,6,6,6,6,6)"><a>#{bundle1.LiYiJiuJiu}</a></li>
+                                <li onclick="ChangePageToCP(5,6,6,6,6,6)"><a>#{bundle1.LiGuoLeXiang}</a></li>
+                            </ul>
+                        </li>
+                        <li style=" width: 131%;text-align: left">
+                            <a onclick="ChangePageToCP(6,0,6,6,6,6)">&nbsp;&nbsp;#{bundle1.Heart}&nbsp;&nbsp;#{bundle1.Object}<a style="float:right">#{bundle1.GoodsSort_unfold1}</a></a>
+                            <ul>
+                                <li onclick="ChangePageToCP(6,1,6,6,6,6)"><a>#{bundle1.Friend}</a></li>
+                                <li onclick="ChangePageToCP(6,2,6,6,6,6)"><a>#{bundle1.Lover}</a></li>
+                                <li onclick="ChangePageToCP(6,3,6,6,6,6)"><a>#{bundle1.Children}</a></li>
+                                <li onclick="ChangePageToCP(6,4,6,6,6,6)"><a>#{bundle1.Elder}</a></li>
+                                <li onclick="ChangePageToCP(6,5,6,6,6,6)"><a>#{bundle1.Customer}</a></li>
+                            </ul>
+                        </li>
+                        <li style=" width: 131%;text-align: left">
+                            <a onclick="ChangePageToCP(6,6,0,6,6,6)">&nbsp;&nbsp;#{bundle1.Heart}&nbsp;&nbsp;#{bundle1.Ocation}<a style="float:right">#{bundle1.GoodsSort_unfold1}</a></a>
+                            <ul>
+                                <li onclick="ChangePageToCP(6,6,1,6,6,6)"><a>#{bundle1.Birthday}</a></li>
+                                <li onclick="ChangePageToCP(6,6,2,6,6,6)"><a>#{bundle1.Living}</a></li>
+                                <li onclick="ChangePageToCP(6,6,3,6,6,6)"><a>#{bundle1.Commerce}</a></li>
+                                <li onclick="ChangePageToCP(6,6,4,6,6,6)"><a>#{bundle1.ValentineDay}</a></li>
+                                <li onclick="ChangePageToCP(6,6,5,6,6,6)"><a>#{bundle1.BabyMemory}</a></li>
+                            </ul>
+                        </li>
+                        <li style=" width: 131%;text-align: left">
+                            <a onclick="ChangePageToCP(6,6,6,0,6,6)">&nbsp;&nbsp;#{bundle1.Heart}&nbsp;&nbsp;#{bundle1.Sort}<a style="float:right">#{bundle1.GoodsSort_unfold1}</a></a>
+                            <ul>
+                                <li onclick="ChangePageToCP(6,6,6,1,6,6)"><a>#{bundle1.CreativeLiving}</a></li>
+                                <li onclick="ChangePageToCP(6,6,6,2,6,6)"><a>#{bundle1.IntelligentElectronics}</a></li>
+                                <li onclick="ChangePageToCP(6,6,6,3,6,6)"><a>#{bundle1.MusicBox}</a></li>
+                                <li onclick="ChangePageToCP(6,6,6,4,6,6)"><a>#{bundle1.WoolDoll}</a></li>
+                                <li onclick="ChangePageToCP(6,6,6,5,6,6)"><a>#{bundle1.CreativeToy}</a></li>
+                            </ul>
+                        </li>
+                        <li style=" width: 131%;text-align: left">
+                            <a onclick="ChangePageToCP(6,6,6,6,0,6)">&nbsp;&nbsp;#{bundle1.Heart}&nbsp;&nbsp;#{bundle1.Festival}<a style="float:right">#{bundle1.GoodsSort_unfold1}</a></a>
+                            <ul>
+                                <li onclick="ChangePageToCP(6,6,6,6,1,6)"><a>#{bundle1.ValentineDay}</a></li>
+                                <li onclick="ChangePageToCP(6,6,6,6,2,6)"><a>#{bundle1.FatherDay}</a></li>
+                                <li onclick="ChangePageToCP(6,6,6,6,3,6)"><a>#{bundle1.MotherDay}</a></li>
+                                <li onclick="ChangePageToCP(6,6,6,6,4,6)"><a>#{bundle1.ChildrenDay}</a></li>
+                                <li onclick="ChangePageToCP(6,6,6,6,5,6)"><a>#{bundle1.TeacherDay}</a></li>
+                            </ul>
+                        </li>
+                        <li style=" width: 131%;text-align: left">
+                            <a onclick="ChangePageToCP(6,6,6,6,6,0)">&nbsp;&nbsp;#{bundle1.Heart}&nbsp;&nbsp;#{bundle1.Price}<a style="float:right">#{bundle1.GoodsSort_unfold1}</a></a>
+                            <ul>
+                                <li onclick="ChangePageToCP(6,6,6,6,6,1)"><a>#{bundle1.FirstPrice}</a></li>
+                                <li onclick="ChangePageToCP(6,6,6,6,6,2)"><a>#{bundle1.SecendPrice}</a></li>
+                                <li onclick="ChangePageToCP(6,6,6,6,6,3)"><a>#{bundle1.ThirdPrice}</a></li>
+                                <li onclick="ChangePageToCP(6,6,6,6,6,4)"><a>#{bundle1.FourthPrice}</a></li>
+                                <li onclick="ChangePageToCP(6,6,6,6,6,5)"><a>#{bundle1.FifPrice}</a></li>
+                            </ul>
+                        </li>
+                    </ul> 
+                </ul>
+                <ul>
+                    <a onclick="ChangePageToCP(0,6,6,6,6,6)">#{bundle1.Brand}</a>
+                    <ul>
+                        <li onclick="ChangePageToCP(1,6,6,6,6,6)"><a>#{bundle1.QuWan}</a></li>
+                        <li onclick="ChangePageToCP(2,6,6,6,6,6)"><a>#{bundle1.Hardway}</a></li>
+                        <li onclick="ChangePageToCP(3,6,6,6,6,6)"><a>#{bundle1.ZhuMingYuan}</a></li>
+                        <li onclick="ChangePageToCP(4,6,6,6,6,6)"><a>#{bundle1.LiYiJiuJiu}</a></li>
+                        <li onclick="ChangePageToCP(5,6,6,6,6,6)"><a>#{bundle1.LiGuoLeXiang}</a></li>
+                    </ul>
+                </ul>
+                <ul><a onclick="ChangePageToCP(6,0,6,6,6,6)">#{bundle1.Object}</a>
+                    <ul>
+                        <li onclick="ChangePageToCP(6,1,6,6,6,6)"><a>#{bundle1.Friend}</a></li>
+                        <li onclick="ChangePageToCP(6,2,6,6,6,6)"><a>#{bundle1.Lover}</a></li>
+                        <li onclick="ChangePageToCP(6,3,6,6,6,6)"><a>#{bundle1.Children}</a></li>
+                        <li onclick="ChangePageToCP(6,4,6,6,6,6)"><a>#{bundle1.Elder}</a></li>
+                        <li onclick="ChangePageToCP(6,5,6,6,6,6)"><a>#{bundle1.Customer}</a></li>
+                    </ul>
+                </ul>
+                <ul><a  onclick="ChangePageToCP(6,6,0,6,6,6)">#{bundle1.Ocation}</a>
+                    <ul>
+                        <li onclick="ChangePageToCP(6,6,1,6,6,6)"><a>#{bundle1.Birthday}</a></li>
+                        <li onclick="ChangePageToCP(6,6,2,6,6,6)"><a>#{bundle1.Living}</a></li>
+                        <li onclick="ChangePageToCP(6,6,3,6,6,6)"><a>#{bundle1.Commerce}</a></li>
+                        <li onclick="ChangePageToCP(6,6,4,6,6,6)"><a>#{bundle1.ValentineDay}</a></li>
+                        <li onclick="ChangePageToCP(6,6,5,6,6,6)"><a>#{bundle1.BabyMemory}</a></li>
+                    </ul>
+                </ul>
+                <ul><a onclick="ChangePageToCP(6,6,6,0,6,6)">#{bundle1.Sort}</a>
+                    <ul>
+                        <li onclick="ChangePageToCP(6,6,6,1,6,6)"><a>#{bundle1.CreativeLiving}</a></li>
+                        <li onclick="ChangePageToCP(6,6,6,2,6,6)"><a>#{bundle1.IntelligentElectronics}</a></li>
+                        <li onclick="ChangePageToCP(6,6,6,3,6,6)"><a>#{bundle1.MusicBox}</a></li>
+                        <li onclick="ChangePageToCP(6,6,6,4,6,6)"><a>#{bundle1.WoolDoll}</a></li>
+                        <li onclick="ChangePageToCP(6,6,6,5,6,6)"><a>#{bundle1.CreativeToy}</a></li>
+                    </ul>
+                </ul>
+                <ul><a onclick="ChangePageToCP(6,6,6,6,0,6)">#{bundle1.Festival}</a>
+                    <ul>
+                        <li onclick="ChangePageToCP(6,6,6,6,1,6)"><a>#{bundle1.ValentineDay}</a></li>
+                        <li onclick="ChangePageToCP(6,6,6,6,2,6)"><a>#{bundle1.FatherDay}</a></li>
+                        <li onclick="ChangePageToCP(6,6,6,6,3,6)"><a>#{bundle1.MotherDay}</a></li>
+                        <li onclick="ChangePageToCP(6,6,6,6,4,6)"><a>#{bundle1.ChildrenDay}</a></li>
+                        <li onclick="ChangePageToCP(6,6,6,6,5,6)"><a>#{bundle1.TeacherDay}</a></li>
+                    </ul>
+                </ul>
+                <ul><a onclick="ChangePageToCP(6,6,6,6,6,0)">#{bundle1.Price}</a>
+                    <ul>
+                        <li onclick="ChangePageToCP(6,6,6,6,6,1)"><a>#{bundle1.FirstPrice}</a></li>
+                        <li onclick="ChangePageToCP(6,6,6,6,6,2)"><a>#{bundle1.SecendPrice}</a></li>
+                        <li onclick="ChangePageToCP(6,6,6,6,6,3)"><a>#{bundle1.ThirdPrice}</a></li>
+                        <li onclick="ChangePageToCP(6,6,6,6,6,4)"><a>#{bundle1.FourthPrice}</a></li>
+                        <li onclick="ChangePageToCP(6,6,6,6,6,5)"><a>#{bundle1.FifPrice}</a></li>
+                    </ul>
+                </ul>
+            </div>
+            
+            <div class="RelevantItem">
+                <br>相关商品：</br>
+                <img src="resources/image/webpage/2.jpg" alt="" style=" width: 100%;height: 28%; margin-top: 4px;cursor: pointer"/>
+                <img src="resources/image/webpage/3.jpg" alt="" style=" width: 100%;height: 28%; margin-top: 4px;cursor: pointer"/>
+                <img src="resources/image/webpage/4.jpg" alt="" style=" width: 100%;height: 28%; margin-top: 4px;cursor: pointer"/>
+            </div>
+            
+            <div class="Item">
+                <p style=" margin-left: 25px">#{bundle1.NowPosition}<a href="faces/ClientPage.xhtml">#{bundle1.MainPage}</a>#{bundle1.GoodsSort_unfold1}</p>
+                <div class="ItemBuy">
+                    <div class="ItemBuy_Img">
+                        <h:graphicImage url="resources/image/webpage/1.jpg"  alt="" width="100%" height="100%"></h:graphicImage>
+                    </div>
+                    
+                    <div class="ItemBuy_Word">
+                        <br></br>
+                        <br>&nbsp;&nbsp;#{bundle1.ItemNo}</br>
+                        <br>&nbsp;&nbsp;#{bundle1.ItemName}</br>
+                        <br>&nbsp;&nbsp;#{bundle1.ItemNum}</br>
+                        <br>&nbsp;&nbsp;#{bundle1.ItemSort}品牌 对象 场合 类别 节日 价格</br>
+                        
+                        <div class="ItemBuy_Word_Buy">
+                            <img src="resources/image/webpage/Sub.png" alt="" style=" margin-left: 15px;margin-bottom:-9px;cursor: pointer;" onclick="SubBuyNumber()"/>
+                            <input type="text" id="BuyNumber" value="1" style=" width: 80px;margin-top: -3px;height:17px;"></input>
+                            <h:graphicImage url="resources/image/webpage/Add.png"  alt="" style="margin-bottom:-9px;cursor: pointer;" onclick="AddBuyNumber(5)"></h:graphicImage>
+                            <br></br>
+                            <h:commandButton style="width:140px;height: 36px;background-color: #ED145B;border-radius:7px;margin-left: 18px;
+                                             border: 1px solid #ED145B;color: white;font-size: 17px;cursor: pointer;" onclick="Buy()" value="#{bundle1.Buy}"></h:commandButton>
+                            <h:commandButton style="width:140px;height: 36px;background-color: #ED145B;border-radius:7px;margin-left: 25px;margin-top: 6px;
+                                             border: 1px solid #ED145B;color: white;font-size: 17px;cursor: pointer;" onclick="AddToCart()" value="#{bundle1.AddToCart}"></h:commandButton>                 
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="ItemIntroduction">
+                    <p>&nbsp;&nbsp;#{bundle1.ItemIntroduction}</p>
+                </div>
+            </div>
+        </div>
+        <div class="Bottom_FriendLink">
+                <p>友情链接：<a href="http://www.52shehua.com" target="_blank">结婚钻戒</a><a href="http://www.yofus.com/" target="_blank">照片书</a>
+                    <a href="http://www.b2b168.com/" target="_blank">八方资源网</a><a href="http://www.shouliwang.com/" target="_blank">厦门特产</a><a href="http://www.163yu.com/" target="_blank">新疆和田玉</a>
+                    <a href="http://www.nzjsw.com/" target="_blank">健身减肥 </a><a href="http://www.iyingji.com" target="_blank">网上冲印</a>
+                    <a href="http://www.19online.cn" target="_blank">红酒</a><a href="http://www.crd.cn" target="_blank">钻戒定制</a>
+                    <a href="http://www.sumcl.com" target="_blank">茶叶网</a><a href="http://www.51pot.com/" target="_blank">紫砂壶</a>
+                    <a href="http://www.doido.com/" target="_blank">钻石</a><a href="http://www.yipihuo.com" target="_blank">批发网</a>
+                    <a href="http://www.591wed.com/" target="_blank">结婚网</a><a href="http://www.taoxie.com/" target="_blank">好乐淘买鞋</a>
+                    <a href="http://www.yichao.cn" target="_blank">眼镜</a><a href="http://www.d8wed.com/" target="_blank">婚纱摄影</a>
+                    <a href="http://www.dionly.com/" target="_blank">钻戒</a><a href="http://www.52hua.cn/" target="_blank">鲜花网</a>
+                    <a href="http://www.84ju.com/" target="_blank">优惠券</a><a href="http://www.a9188.com/" target="_blank">藏龙古玩网</a>
+                    <a href="http://www.binlun.com.cn/" target="_blank">手表</a><a href="http://www.hua.com/" target="_blank">中国鲜花礼品网</a>
+                    <a href="http://www.giftjie.com/" target="_blank">礼物</a><a href="http://www.7192.com/" target="_blank">影楼网</a>
+                    <a href="http://www.hifidiy.net/" target="_blank">中国音响</a><a href="http://www.zhibitouzi.com/" target="_blank">人民币收藏 </a>
+                    <a href="http://www.qj.com.cn/" target="_blank">加盟网</a><a href="http://www.wsqs.com.cn/" target="_blank">冲锋衣</a>
+                    <a href="http://www.yaahe.cn/" target="_blank">美瞳</a><a href="http://www.easeeyes.com/" target="_blank">美瞳</a>
+                    <a href="http://www.obolee.com/" target="_blank">欧宝丽官网</a><a href="http://www.ttpet.com/" target="_blank">宠物</a>
+                    <a href="http://www.178good.com/" target="_blank">购物网站大全</a><a href="http://www.china3-d.com/" target="_blank">3D电影</a>
+                    <a href="http://www.7dapei.com/" target="_blank">服装搭配 </a><a href="http://www.qiye.gov.cn/" target="_blank">中国企业</a>
+                    <a href="http://www.shangc.net/" target="_blank">第一时尚网</a><a href="http://www.shoes.net.cn/" target="_blank">鞋</a>
+                    <a href="http://www.ynhmw.com/" target="_blank">云南花木网</a><a href="http://www.wine9.com/" target="_blank">红酒</a>
+                    <a href="http://www.kaitao.cn/" target="_blank">如何开网店</a><a href="http://www.inshion.com/" target="_blank">型尚网 </a>
+                    <a href="http://www.17ugo.com/" target="_blank">优购网</a><a href="http://www.zhidiy.com/" target="_blank">纸艺网</a>
+                    <a href="http://www.xingzuowu.com/" target="_blank">星座配对</a><a href="http://www.ynshangji.com/" target="_blank">商机网</a>
+                    <a href="http://www.liansuo.com/" target="_blank">加盟连锁网</a><a href="http://www.temaiku.com/" target="_blank">唯品会品牌折扣网</a>
+                    <a href="http://www.ctoy.com.cn/" target="_blank">玩具</a><a href="http://www.marry52.com/" target="_blank">婚纱照</a>
+                    <a href="http://www.hitao.com/" target="_blank">嗨淘化妆品网站</a><a href="http://www.pztuan.com/" target="_blank">品质网</a>
+                    <a href="http://www.53shop.com/" target="_blank">53货源网</a><a href="http://www.b5m.com/" target="_blank">比价网</a>
+                    <a href="http://www.59169.tv" target="_blank">天下好酒</a><a href="http://www.paixie.net/" target="_blank">拍鞋网</a>   
+                    <a href="http://www.wto168.net/" target="_blank">国际珠宝网</a><a href="http://www.yimianmian.com/" target="_blank">意绵绵珠宝</a>
+                    <a href="http://www.51fashion.com.cn/" target="_blank">饰品招商加盟</a><a href="http://www.cocodiy.com/" target="_blank">礼物网</a>
+                    <a href="http://www.tulaoshi.com/" target="_blank">图老师</a><a href="http://www.mvomvo.com/" target="_blank">生日礼物</a>
+                    <a href="http://www.lipin-bj.cn/" target="_blank">北京礼品公司</a><br></br><br></br>
+                </p>
+            </div>
+        <script src="resources/JS/Push.js" type="text/javascript"></script>
+        <script src="resources/JS/GoodsList.js" type="text/javascript"></script>
+        <script src="resources/JS/BuyNumber.js" type="text/javascript"></script>
+        <script src="resources/JS/LRCS.js" type="text/javascript"></script>
+        <script src="resources/JS/ChangePage.js" type="text/javascript"></script>
+        <script src="resources/JS/Sort_select.js" type="text/javascript"></script>
+    </h:body>
+</html>
+

@@ -1,0 +1,21 @@
+<?xml version="1.0"?>
+<!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+"http://www.hibernate.org/dtd/hibernate-mapping-3.0.dtd">
+<hibernate-mapping package="com.buptsse.spm.domain">
+	<class name="User" table="User">
+		<cache usage="read-write" /> <!-- 缓存 -->
+		<id name="id" column="id" type="string">
+			<generator class="assigned" />
+		</id>
+		<property name="userName" column="userName" length="45"
+			type="string" />
+		<property name="password" column="password" length="45"
+			type="string" />
+		<property name="position" column="position" length="45"
+			type="string" />
+		<property name="userId" column="userId" length="45"
+			type="string" />
+		<property name="videoTime" column="videoTime"
+			type="integer" />
+	</class>
+</hibernate-mapping>

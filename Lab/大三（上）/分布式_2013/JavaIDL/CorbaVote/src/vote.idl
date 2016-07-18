@@ -1,0 +1,6 @@
+module CorbaVote{
+	interface Vote{
+		string getList();
+		void castVote(in string name);
+	};
+};

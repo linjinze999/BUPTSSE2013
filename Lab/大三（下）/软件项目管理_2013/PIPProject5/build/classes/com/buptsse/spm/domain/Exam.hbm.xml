@@ -1,0 +1,28 @@
+<?xml version="1.0"?>
+<!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+"http://www.hibernate.org/dtd/hibernate-mapping-3.0.dtd">
+<hibernate-mapping package="com.buptsse.spm.domain">
+	<class name="Exam" table="Exam">
+		<cache usage="read-write" /> <!-- 缓存 -->
+		
+		<composite-id>
+			<key-property name="examName" column="examName" type="string"></key-property>
+			<key-property name="number" column="number" type="integer" >
+			</key-property>
+		</composite-id>		
+		
+		<property name="question" column="question" 
+			type="string" />
+		<property name="answerA" column="answerA" 
+			type="string" />
+		<property name="answerB" column="answerB" 
+			type="string" />
+		<property name="answerC" column="answerC" 
+			type="string" />
+		<property name="answerD" column="answerD" 
+			type="string" />									
+		<property name="answerRight" column="answerRight" 
+			type="string" />
+
+	</class>
+</hibernate-mapping>

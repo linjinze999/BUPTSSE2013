@@ -1,0 +1,16 @@
+<?xml version="1.0"?>
+<!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+"http://www.hibernate.org/dtd/hibernate-mapping-3.0.dtd">
+<hibernate-mapping package="com.buptsse.spm.domain">
+	<class name="Schedule" table="Schedule">
+		<cache usage="read-write" /> <!-- 缓存 -->
+		<composite-id>
+			<key-property name="chapter_id" column="chapter_id" type="int"></key-property>
+			<key-property name="video_step_order" column="video_step_order" type="int"></key-property>
+			<key-property name="userid" column="userid" type="string"></key-property>
+		</composite-id>
+
+		<property name="percent" column="percent" 
+			type="int" />
+	</class>
+</hibernate-mapping>

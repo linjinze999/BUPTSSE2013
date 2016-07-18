@@ -1,0 +1,1 @@
+id*num-(id-num)+((id-num)/num)

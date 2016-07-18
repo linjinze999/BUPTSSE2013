@@ -1,0 +1,21 @@
+<?xml version="1.0"?>
+<!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+"http://www.hibernate.org/dtd/hibernate-mapping-3.0.dtd">
+<hibernate-mapping package="com.buptsse.spm.domain">
+	<class name="Code" table="Code">
+		<cache usage="read-write" /> <!-- 缓存 -->
+		<id name="id" column="id" type="int">
+			<generator class="increment"/>
+		</id>
+		<property name="codeType" column="codeType" 
+			type="string" />
+		<property name="codeCode" column="codeCode" 
+			type="string" />
+		<property name="codeName" column="codeName"  
+			type="string" />
+		<property name="validate" column="validate"  
+			type="string" />
+		<property name="remark" column="remark"  
+			type="string" />
+	</class>
+</hibernate-mapping>

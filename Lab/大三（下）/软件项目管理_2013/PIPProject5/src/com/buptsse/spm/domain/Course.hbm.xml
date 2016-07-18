@@ -1,0 +1,33 @@
+<?xml version="1.0"?>
+<!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+"http://www.hibernate.org/dtd/hibernate-mapping-3.0.dtd">
+<hibernate-mapping package="com.buptsse.spm.domain">
+	<class name="Course" table="Course">
+		<cache usage="read-write" /> <!-- 缓存 -->
+		<id name="studentId" column="studentId" type="string">
+			<generator class="assigned"/>
+		</id>
+		<property name="name" column="name" length="45" update = "false" 
+			type="string" />
+		<property name="classId" column="classId" length="45" update = "false" 
+			type="string" />
+		<property name="email" column="email" length="45" update = "false" 
+			type="string" />
+		<property name="telno" column="telno" length="45" update = "false" 
+			type="string" />
+		<property name="status" column="status" length="45" 
+			type="string" />
+		<property name="dailyGrade" column="dailyGrade" length="11"
+			type="big_decimal" />
+		<property name="midGrade" column="midGrade" length="11"
+			type="big_decimal" />
+		<property name="finalGrade" column="finalGrade" length="11"
+			type="big_decimal" />
+		<property name="practiceGrade" column="practiceGrade" length="11"
+			type="big_decimal" />
+		<property name="totalGrade" column="totalGrade" length="11"
+			type="big_decimal" />
+		<property name="syear" column="syear" length="4"
+			type="string" />			
+	</class>
+</hibernate-mapping>

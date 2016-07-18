@@ -1,0 +1,21 @@
+<?xml version="1.0"?>
+<!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+"http://www.hibernate.org/dtd/hibernate-mapping-3.0.dtd">
+<hibernate-mapping package="com.buptsse.spm.domain">
+	<class name="SpChapter" table="sp_chapter">
+		<cache usage="read-write" /> <!-- 缓存 -->
+		<id name="chapter_id" column="chapter_id" type="integer">
+			<generator class="increment" />
+		</id>
+		<property name="chapter_name_number" column="chapter_name_number" 
+			type="integer" />
+		<property name="chapter_name" column="chapter_name" 
+			type="integer" />
+		<property name="chapter_desc" column="chapter_desc" 
+			type="string" />
+		<property name="chapter_pic" column="chapter_pic" 
+			type="string" />
+		<property name="chapter_courseware" column="chapter_courseware" 
+			type="string" />
+	</class>
+</hibernate-mapping>

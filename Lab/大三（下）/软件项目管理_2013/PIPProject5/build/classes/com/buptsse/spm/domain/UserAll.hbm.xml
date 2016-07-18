@@ -1,0 +1,52 @@
+<?xml version="1.0"?>
+<!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+"http://www.hibernate.org/dtd/hibernate-mapping-3.0.dtd">
+<hibernate-mapping package="com.buptsse.spm.domain">
+	<class name="UserAll" table="user_all">
+		<cache usage="read-write" /> <!-- 缓存 -->
+		<id name="idUserAll" column="id_user_all" type="int">
+			<generator class="native" />
+		</id>
+		<property name="accountUserAll" column="account_user_all" length="15"
+			type="string" />
+		<property name="passwordUserAll" column="password_user_all" length="25"
+			type="string" />
+		<property name="roleUserAll" column="role_user_all" length="10"
+			type="string" />
+		<property name="nameUserAll" column="name_user_all" length="45"
+			type="string" />
+		<property name="sexUserAll" column="sex_user_all" length="2"
+			type="string" />
+		<property name="idcardUserAll" column="idcard_user_all" length="25"
+			type="string" />
+		<property name="collegeUserAll" column="college_user_all" length="20"
+			type="string" />
+		<property name="majorUserAll" column="major_user_all" length="25"
+			type="string" />
+		<property name="gradeUserAll" column="grade_user_all" length="10"
+			type="string" />
+		<property name="stateUserAll" column="state_user_all" length="10"
+			type="string" />
+		<property name="phone1UserAll" column="phone1_user_all" length="15"
+			type="string" />
+		<property name="phone2UserAll" column="phone2_user_all" length="15"
+			type="string" />
+		<property name="qqUserAll" column="qq_user_all" length="20"
+			type="string" />
+		<property name="emailUserAll" column="email_user_all" length="45"
+			type="string" />
+		<property name="addressUserAll" column="address_user_all" length="256"
+			type="string" />
+		<property name="logintimeUserAll" column="logintime_user_all" length="7"
+			type="calendar" />
+		<property name="loginipUserAll" column="loginip_user_all" length="45"
+			type="string" />
+		<property name="photoUserAll" column="photo_user_all" length="256"
+			type="string" />
+		<property name="noticeUserAll" column="notice_user_all" type="integer" />
+		<property name="messageUserAll" column="message_user_all" type="integer" />
+		<property name="taskUserAll" column="task_user_all" type="integer" />
+		<property name="teamidUserAll" column="teamid_user_all" type="integer" />
+		<property name="scoreUserAll" column="score_user_all" type="integer" />
+	</class>
+</hibernate-mapping>

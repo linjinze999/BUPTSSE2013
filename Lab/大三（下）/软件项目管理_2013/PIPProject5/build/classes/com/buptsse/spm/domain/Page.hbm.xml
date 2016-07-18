@@ -1,0 +1,17 @@
+<?xml version="1.0"?>
+<!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+"http://www.hibernate.org/dtd/hibernate-mapping-3.0.dtd">
+<hibernate-mapping package="com.buptsse.spm.domain">
+	<class name="Page" table="page">
+		<cache usage="read-write" /> <!-- 缓存 -->
+		<id name="id" column="id_page" type="integer">
+			<generator class="native" />
+		</id>
+		<property name="name" column="name_page" length="45" type="string" />
+		<property name="link" column="link_page" length="256" type="string" />
+		<property name="img" column="img_page" length="256" type="string" />
+		<property name="level" column="level_page" type="integer" />
+		<property name="parentId" column="parent_id" type="integer" />
+		<property name="describ" column="describ_page" length="256" type="string" />
+	</class>
+</hibernate-mapping>

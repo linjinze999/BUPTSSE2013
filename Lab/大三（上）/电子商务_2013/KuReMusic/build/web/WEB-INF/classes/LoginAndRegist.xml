@@ -1,0 +1,30 @@
+<!DOCTYPE struts PUBLIC
+"-//Apache Software Foundation//DTD Struts Configuration 2.0//EN"
+"http://struts.apache.org/dtds/struts-2.0.dtd">
+
+<struts>
+    <!-- Configuration for the default package. -->
+    <package name="default" extends="struts-default">
+        <action name="login" class="Actions.ClientLogin" method="login">  
+            <result name="success">ClientWindow.jsp</result>
+            <result name="fail1">LoginOrRegistFailWindow.jsp?errortype=11</result>
+            <result name="fail2">LoginOrRegistFailWindow.jsp?errortype=12</result>
+        </action>
+        <action name="regist" class="Actions.ClientLogin" method="regist">  
+            <result name="success">ClientWindow.jsp</result>
+            <result name="fail1">LoginOrRegistFailWindow.jsp?errortype=21</result>
+            <result name="fail2">LoginOrRegistFailWindow.jsp?errortype=22</result>
+            <result name="fail3">LoginOrRegistFailWindow.jsp?errortype=23</result>
+            <result name="fail4">LoginOrRegistFailWindow.jsp?errortype=24</result>
+        </action>
+        <action name="collect" class="Actions.ClientLogin" method="collect">
+            <result name="ok">ClientWindow.jsp</result>
+        </action>
+        <action name="search" class="Actions.ClientLogin" method="search">
+            <result name="ok">ClientWindow.jsp</result>
+        </action>
+        <action name="remove" class="Actions.ClientLogin" method="remove">
+            <result name="ok">ClientWindow.jsp</result>
+        </action>
+    </package>
+</struts>

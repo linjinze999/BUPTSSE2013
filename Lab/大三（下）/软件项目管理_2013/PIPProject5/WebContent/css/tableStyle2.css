@@ -1,0 +1,61 @@
+body {
+	margin: 0;
+	padding: 20px;
+	font: 13px "Lucida Grande", "Lucida Sans Unicode", Helvetica, Arial,
+		sans-serif;
+	font-family: "Microsoft YaHei";
+}
+
+/* ---- Some Resets ---- */
+p,table,caption,td,tr,th {
+	margin: 0;
+	padding: 0;
+	line-height: 200%
+}
+
+/* ---- Paragraphs ---- */ /* ---- Table ---- */
+table {
+	border-collapse: collapse;
+	margin-bottom: 15px;
+	width: 70%;
+}
+
+caption {
+	text-align: left;
+	font-size: 15px;
+}
+
+table td,table th {
+	border: 1px solid #b6d9e8;
+	border-width:0;
+}
+
+thead th {
+	background: #fff;
+}
+
+thead th[colspan],thead th[rowspan] {
+	background: #fff;
+}
+
+tbody th,tfoot th {
+	text-align: left;
+	background: #fff;
+}
+
+tbody td,tfoot td {
+	background: #fff;
+}
+
+tfoot th {
+	background: #fff;
+}
+
+tfoot td {
+	background: #fff;
+	font-weight: bold;
+}
+
+tbody tr.odd td {
+	background: #fff;
+}

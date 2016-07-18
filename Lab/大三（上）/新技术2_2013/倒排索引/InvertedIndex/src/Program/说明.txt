@@ -1,0 +1,5 @@
+/*
+*本项目实现程序为：InvertedIndex.java
+*MultipleOutputFormat.java是为了解决"多文件输出"版本不同造成的问题而从网上寻找的"多文件输出"代码
+*LineRecordWriter.java是为了解决"多文件输出"版本不同造成的问题而从网上寻找的"多文件输出"类所附带的代码
+*/

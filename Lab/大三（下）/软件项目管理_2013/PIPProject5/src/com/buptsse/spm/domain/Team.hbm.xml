@@ -1,0 +1,38 @@
+<?xml version="1.0"?>
+<!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+"http://www.hibernate.org/dtd/hibernate-mapping-3.0.dtd">
+<hibernate-mapping package="com.buptsse.spm.domain">
+	<class name="Team" table="team">
+		<cache usage="read-write" /> <!-- 缓存 -->
+		<id name="id" column="id_team" type="int">
+			<generator class="native" />
+		</id>
+		<property name="name" column="name_team" length="64"
+			type="string" />
+		<property name="member" column="member_team" length="256"
+			type="string" />
+		<property name="money" column="money_team" 
+			type="integer" />
+		<property name="code" column="code_team" length="256"
+			type="string" />
+		<property name="url" column="deplay_team" length="256"
+			type="string" />
+		<property name="requireDocu" column="docu_require_team" length="256"
+			type="string" />
+		<property name="designDocu" column="docu_design_team" length="256"
+			type="string" />
+		<property name="detailDocu" column="docu_detail_team" length="256"
+			type="string" />
+		<property name="score" column="score_team" type="integer" />
+		<property name="deployScore" column="score_deploy_team" type="integer" />
+		<property name="loginScore" column="score_login_team" type="integer" />
+		<property name="functionScore" column="score_function_team" type="integer" />
+		<property name="performanceScore" column="score_performance_team" type="integer" />
+		<property name="code1Score" column="score_code1_team" type="integer" />
+		<property name="code2Score" column="score_code2_team" type="integer" />
+		<property name="document1Score" column="score_document1_team" type="integer" />
+		<property name="document2Score" column="score_document2_team" type="integer" />
+		<property name="linkScore" column="score_link_team" type="integer" />
+
+	</class>
+</hibernate-mapping>

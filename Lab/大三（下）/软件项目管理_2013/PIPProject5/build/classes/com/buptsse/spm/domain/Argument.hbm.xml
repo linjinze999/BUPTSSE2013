@@ -1,0 +1,29 @@
+<?xml version="1.0"?>
+<!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+"http://www.hibernate.org/dtd/hibernate-mapping-3.0.dtd">
+<hibernate-mapping package="com.buptsse.spm.domain">
+	<class name="MyArgument" table="myargument">
+		<cache usage="read-write" /> <!-- 缓存 -->
+		<id name="id" column="idargument_arg" type="int">
+			<generator class="native" />
+		</id>
+		<property name="deployIp" column="deployip_arg" length="128"
+			type="string" />
+		<property name="deployPort" column="deployport_arg" length="45"
+			type="string" />
+		<property name="deployAccount" column="deployaccount_arg" length="45"
+			type="string" />
+		<property name="deployPassword" column="deploypassword_arg" length="45"
+			type="string" />
+		<property name="dbIp" column="dbip_arg" length="128"
+			type="string" />
+		<property name="dbPort" column="dbport_arg" length="45"
+			type="string" />
+		<property name="dbAccount" column="dbaccount_arg" length="45"
+			type="string" />
+		<property name="dbPassword" column="dbpassword_arg" length="45"
+			type="string" />
+		<property name="docuPath" column="docupath_arg" length="256"
+			type="string" />
+	</class>
+</hibernate-mapping>

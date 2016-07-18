@@ -1,0 +1,508 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE struts PUBLIC
+	"-//Apache Software Foundation//DTD Struts Configuration 2.3//EN"
+	"http://struts.apache.org/dtds/struts-2.3.dtd">
+<struts>
+	<package name="hysd" extends="struts-default" namespace="/">
+	
+		<default-action-ref name="indexPage" />
+		
+		<global-results>
+			<result name="exceptionPage">/error/exceptionPage.jsp</result>
+		</global-results>
+		
+		<global-exception-mappings>
+			<exception-mapping result="exceptionPage" exception="java.lang.Exception" />
+		</global-exception-mappings>
+		
+		
+		<!-- 登入 -->
+		<action name="userLoginAction" method="login" class="UserLoginAction">
+			<result name="success">jsp/mainFrame/mainFrame.jsp</result>
+			<result name="error">jsp/login.jsp</result>
+		</action>
+		<!-- 游客登入 -->
+		<action name="touristLoginAction" method="touristLogin" class="UserLoginAction">
+			<result name="success">jsp/mainFrame/mainFrame.jsp</result>
+			<result name="error">jsp/login.jsp</result>
+		</action>
+		
+		<!-- 获取某角色所有用户 -->
+		<action name="searchUserAllByUserAllAction" method="searchUserAll" class="UserAllAction">
+		</action>
+		
+		<!-- 增加用户 -->
+		<action name="addUserAllAction" method="addUser" class="UserAllAction">
+		</action>
+		
+		<!-- 修改用户 -->
+		<action name="updateUserAllAction" method="updateUser" class="UserAllAction">
+		</action>
+		
+		<!-- 修改用户密码 -->
+		<action name="changePasswordAction" method="changePassword" class="UserAllAction">
+		</action>
+		
+		<!-- 删除单一用户 -->
+		<action name="deleteUserAllAction" method="deleteUser" class="UserAllAction">
+		</action>
+		
+		<!-- 删除批量用户 -->
+		<action name="deleteUserAllListAction" method="deleteUserList" class="UserAllAction">
+		</action>
+		
+		<!-- 获取学生登录情况 -->
+		<action name="searchStudentLoginAction" method="searchStudentLogin" class="UserAllAction">
+		</action>
+		
+		<!-- 修改学生成绩 -->
+		<action name="updateStudentScoreAction" method="updateStudentScore" class="UserAllAction">
+		</action>
+		
+		<!-- 获取角色页面(带有上级页面) -->
+		<action name="RolePagesAction" method="searchPagesByRole" class="PageRoleAction">
+		</action>
+		
+		<!-- 获取角色页面(不带上级页面) -->
+		<action name="rootRolePagesAction" method="searchPagesByRoleIn" class="PageRoleAction">
+		</action>
+		
+		<!-- 分配角色页面 -->
+		<action name="updateRolePagesAction" method="updateRolePages" class="PageRoleAction">
+		</action>
+		
+		<!-- 获取所有页面 -->
+		<action name="AllPagesAction" method="searchAllPages" class="PageAction">
+		</action>
+		
+		<!-- 获取所有页面 (未分层)-->
+		<action name="AllPagesNolayeredAction" method="searchAllPagesNolayered" class="PageAction">
+		</action>
+		
+		<!-- 添加目录页面 -->
+		<action name="addPageAction" method="addPage" class="PageAction">
+		</action>
+		
+		<!-- 删除目录页面 -->
+		<action name="deletePageAction" method="deletePage" class="PageAction">
+		</action>
+		
+		<!-- 修改目录页面 -->
+		<action name="updatePageAction" method="updatePage" class="PageAction">
+		</action>
+		
+		<!-- 获得公告 -->
+		<action name="searchNoticeAction" method="searchNotice" class="NoticeAction">
+		</action>
+		
+		<!-- 获得通知 -->
+		<action name="searchInformAction" method="searchInform" class="NoticeAction">
+		</action>
+		
+		<!-- 获得留言 -->
+		<action name="searchMessageAction" method="searchMessage" class="NoticeAction">
+		</action>
+		
+		<!-- 获得作业 -->
+		<action name="searchTaskAction" method="searchTask" class="NoticeAction">
+		</action>
+		
+		<!-- 添加通知、留言、作业 -->
+		<action name="addNoticeAction" method="addNotice" class="NoticeAction">
+		</action>
+		
+		<!-- 修改公告、通知、留言、作业 -->
+		<action name="updateNoticeAction" method="updateNotice" class="NoticeAction">
+		</action>
+		
+		<!-- 获取全部团队信息 -->
+		<action name="searchAllTeamAction" method="searchAllTeam" class="TeamAction">
+		</action>
+		
+		<!-- 获取个人团队信息 -->
+		<action name="findTeamByMemberAction" method="findTeamByMember" class="TeamAction">
+		</action>
+		
+		<!-- 添加团队 -->
+		<action name="addTeamAction" method="addTeam" class="TeamAction">
+		</action>
+		
+		<!-- 删除团队 -->
+		<action name="deleteTeamAction" method="deleteTeam" class="TeamAction">
+		</action>
+		
+		<!-- 更新团队信息 -->
+		<action name="updatePartTeamAction" method="updatePartTeam" class="TeamAction">
+		</action>
+		
+		<!-- 更新团队成绩 -->
+		<action name="updateTeamScoreAction" method="updateTeamScore" class="TeamAction">
+		</action>
+		
+		<!-- 打开部署系统页面 -->
+		<action name="openDeployPageAction" method="openDeployPage" class="TaskSubmitAction">
+		</action>
+		
+		<!-- 部署数据库 -->
+		<action name="deployDatabaseAction" method="deployDatabase" class="TaskSubmitAction">
+		</action>
+		
+		<!-- 检验项目部署成功 -->
+		<action name="isDeployOKAction" method="isDeployOK" class="TaskSubmitAction">
+		</action>
+		
+		<!-- 上传源程序 -->
+		<action name="codeSubmitAction" method="codeSubmit" class="TaskSubmitAction">
+		</action>
+		
+		<!-- 功能测试 -->
+		<action name="functionTestAction" method="functionTest" class="TaskSubmitAction">
+		</action>
+		
+		<!-- 性能测试 -->
+		<action name="performanceTestAction" method="performanceTest" class="TaskSubmitAction">
+		</action>
+		
+		<!-- 检测代码是否提交 -->
+		<action name="isCodeSubmitAction" method="isCodeSubmit" class="TaskSubmitAction">
+		</action>
+		
+		<!-- 检测是否做过功能测试 -->
+		<action name="isFunctionTestAction" method="isFunctionTest" class="TaskSubmitAction">
+		</action>
+		
+		<!-- 检测是否做过性能测试 -->
+		<action name="isPerformanceTestAction" method="isPerformanceTest" class="TaskSubmitAction">
+		</action>
+		
+		<!-- 检测文档是否提交 -->
+		<action name="isDocumentSubmitAction" method="isDocumentSubmit" class="TaskSubmitAction">
+		</action>
+		
+		<!-- 上传文档 -->
+		<action name="documentSubmitAction" method="documentSubmit" class="TaskSubmitAction">
+		</action>
+		
+		<!-- 修改评分 -->
+		<action name="updateScoreAction" method="updateScore" class="TaskEvaluatingAction">
+		</action>
+		
+		<!-- 获取团队最新评分 -->
+		<action name="findTeamLastestScoreAction" method="findTeamLastestScore" class="TaskEvaluatingAction">
+		</action>
+		
+		<!-- 修改团队成员分数 -->
+		<action name="updateMemberScoreAction" method="updateMemberScore" class="TaskEvaluatingAction">
+		</action>
+		
+		<!-- 设置部署服务器参数 -->
+		<action name="updateDeployArgsAction" method="updateDeployArgs" class="MyArgumentAction">
+		</action>
+		
+		<!-- 设置数据库服务器参数 -->
+		<action name="updateDatabaseArgsAction" method="updateDatabaseArgs" class="MyArgumentAction">
+		</action>
+		
+		<!-- 设置文档路径参数 -->
+		<action name="updateDocuPathAction" method="updateDocuPath" class="MyArgumentAction">
+		</action>
+		
+		<!-- 获取设置参数 -->
+		<action name="searchArgumentAction" method="searchArgument" class="MyArgumentAction">
+		</action>
+		
+		<!-- 服务器连接测试 -->
+		<action name="testDeployConnectAction" method="testDeployConnect" class="MyArgumentAction">
+		</action>
+		
+		<!-- 数据库链接测试 -->
+		<action name="testDatabaseConnectAction" method="testDatabaseConnect" class="MyArgumentAction">
+		</action>
+		
+		
+		
+		
+		
+		
+		
+		
+		<action name="indexPage">
+			<result>jsp/register.jsp</result>
+		</action>
+		
+		<!-- 登入 -->
+		<action name="loginAction" method="login" class="LoginAction">
+			<result name="success">jsp/mainFrame.jsp</result>
+			<result name="error">jsp/register.jsp</result>
+		</action>
+		
+		<!-- 登出 -->
+		<action name="logOut" method="logout" class="LoginAction">
+			<result name="success">/jsp/register.jsp</result>
+			<result name="error">jsp/register.jsp</result>
+		</action>		
+		
+		<!-- 注册 -->
+		<action name="registerAction" method="register" class="RegisterAction">
+			<result name="success"></result>
+			<result name="error">jsp/register.jsp</result>
+		</action>
+		
+		<!-- 查询user列表 -->
+		<action name="listUser" method="listUser" class="RegisterAction">
+			<result name="success"></result>
+			<result name="error">jsp/register.jsp</result>
+		</action>
+		
+		<!-- 删除user -->
+		<action name="deleteUser" method="deleteUser" class="RegisterAction">
+			<result name="success"></result>
+			<result name="error">jsp/register.jsp</result>
+		</action>	
+						
+		<!-- 增加user -->
+		<action name="insertUser" method="insertUser" class="RegisterAction">
+			<result name="success"></result>
+			<result name="error">jsp/register.jsp</result>
+		</action>			
+		
+		
+		<!-- 查询课程信息 -->
+		<action name="courseQuery" method="listCourse" class="courseAction">
+			<result name="success"></result>
+			<result name="error">jsp/error.jsp</result>
+		</action>	
+		<!-- 修改课程信息 -->		
+		<action name="courseUpdate" method="updateCourse" class="courseAction">
+			<result name="success"></result>
+			<result name="error">jsp/error.jsp</result>
+		</action>	
+		<!-- 插入课程信息 -->	
+		<action name="insertCourse" method="insertCourse" class="courseAction">
+			<result name="success"></result>
+			<result name="error">jsp/error.jsp</result>
+		</action>				
+	
+	    <!-- 邮件通知 -->
+		<action name="emailNotify" method="emailNotify" class="emailAction">
+			<result name="success">jsp/course/notifySuccess.jsp</result>
+			<result name="error">error/error.jsp</result>
+		</action>
+	
+	    <!-- 上传学生成绩 -->
+		<action name="uploadScoreFile" method="uploadScoreFile" class="uploadAction">
+			<result name="success"></result>
+			<result name="error">error/error.jsp</result>
+		</action>	
+			
+			
+	    <!-- 留言板 -->
+		<action name="findMessageList" method="findMessageList" class="messageAction">
+			<result name="success">/jsp/message/showMessage.jsp</result>
+			<result name="error">error/error.jsp</result>
+		</action>			
+		
+		<!-- 保存留言 -->
+		<action name="saveMessage" method="insertMessage" class="messageAction">
+			<result name="success">/jsp/message/showMessage.jsp</result>
+			<result name="error">error/error.jsp</result>
+		</action>
+		
+		<!-- 保存留言 -->
+		<action name="deleteMessage" method="deleteMessage" class="messageAction">
+			<result name="success"></result>
+			<result name="error">error/error.jsp</result>
+		</action>		
+		
+				
+		 <!-- 网上测试 -->
+		<action name="listExam" method="findExamList" class="examAction">
+			<result name="success">/jsp/exam/examList.jsp</result>
+			<result name="error">error/error.jsp</result>
+		</action>			
+		
+		 <!-- 增加测试题-->
+		<action name="addQuestion" method="addQuestion" class="examAction">
+			<result name="success"></result>
+			<result name="error">error/error.jsp</result>
+		</action>		
+		
+		<!-- 查询测试题-->
+		<action name="queryQuestion" method="queryQuestion" class="examAction">
+			<result name="success">/jsp/exam/showExam.jsp</result>
+			<result name="error">error/error.jsp</result>
+		</action>	
+		
+		<!-- 进入测试题-->
+		<action name="enterExam" method="queryQuestion" class="examAction">
+			<result name="success">/jsp/exam/enterExam.jsp</result>
+			<result name="error">error/error.jsp</result>
+		</action>			
+
+		<!-- 校验试题答案-->
+		<action name="checkAnswer" method="checkAnswer" class="examAction">
+			<result name="success">/jsp/exam/viewExamResult.jsp</result>
+			<result name="error">error/error.jsp</result>
+		</action>
+		
+		<!-- 删除测试题-->
+		<action name="deleteExam" method="deleteExam" class="examAction">
+			<result name="success"></result>
+			<result name="error">error/error.jsp</result>
+		</action>	
+		
+		
+		<!-- 删除具体的问题-->
+		<action name="deleteQuestion" method="deleteQuestion" class="examAction">
+			<result name="success"></result>
+			<result name="error">error/error.jsp</result>
+		</action>		
+		
+		<!-- 行业信息列表-->
+		<action name="findTradeInfoList" method="findTradeInfoList" class="tradeInfoAction">
+			<result name="success">/jsp/trade/tradeInfo.jsp</result>
+			<result name="error">error/error.jsp</result>
+		</action>		
+		
+		<!-- 查找行业信息-->
+		<action name="findTradeInfo" method="findTradeInfo" class="tradeInfoAction">
+			<result name="success">/jsp/trade/detailInfo.jsp</result>
+			<result name="error">error/error.jsp</result>
+		</action>		
+		
+		<!-- 行业详情-->
+		<action name="enterIndex" method="findTradeInfoList" class="tradeInfoAction">
+			<result name="success">/jsp/right.jsp</result>
+			<result name="error">error/error.jsp</result>
+		</action>		
+		
+		<!-- 查看下载信息-->
+		<action name="listDownLoad" method="findDownLoadList" class="downLoadAction">
+			<result name="success">/jsp/download/downLoad.jsp</result>
+			<result name="error">error/error.jsp</result>
+		</action>			
+		
+		<!-- 增加下载信息-->
+		<action name="addDownload" method="insertDownLoad" class="downLoadAction">
+			<result name="success"></result>
+			<result name="error">error/error.jsp</result>
+		</action>		
+		
+		<!-- 删除下载信息-->
+		<action name="deleteDownload" method="deleteDownLoad" class="downLoadAction">
+			<result name="success">/jsp/download/downLoad.jsp</result>
+			<result name="error">error/error.jsp</result>
+		</action>			
+		
+		<!-- 基本信息菜单 -->
+		<action name="enterintro" method="enterBasicInfo" class="BasicInfoAction">
+			<!-- 课程简介  -->
+			<result name="kechengjianjie">jsp/introduction/courseIntro.jsp</result>
+			<!-- 教学大纲  -->
+			<result name="jiaoxuedagang">jsp/introduction/outline.jsp</result>
+			<!-- 课时安排  -->
+			<result name="keshianpai">jsp/introduction/teachingPlan.jsp</result>
+			<!-- 课程特色  -->
+			<result name="kechengtese">jsp/introduction/character.jsp</result>
+			<!-- 考评方式  -->
+			<result name="kaopingfangshi">jsp/introduction/wayOfTest.jsp</result>
+			<!-- 参考书目  -->
+			<result name="cankaoshumu">jsp/introduction/references.jsp</result>
+
+			<!-- 考试大纲  -->
+			<result name="kaoshidagang">jsp/introduction/tools.jsp</result>			
+
+			<!-- 知识点索引 -->
+			<result name="zhishidiansuoyin">jsp/introduction/practice.jsp</result>	
+			
+			<!-- 教师队伍 -->
+			<result name="jiaoshiduiwu">jsp/introduction/teacherTeam.jsp</result>				
+			<!-- 校企合作 -->
+			<result name="xiaoqihezuo">jsp/introduction/cooperation.jsp</result>
+			<!-- 学术水平 -->
+			<result name="xueshushuiping">jsp/introduction/academicLevel.jsp</result>
+			<!-- 联系我们 -->
+			<result name="lianxiwomen">jsp/introduction/contact.jsp</result>
+			<!-- 练习题 -->
+			<result name="exerciseMain">/jsp/exercise/mainView.jsp</result>
+			<result name="exercise0">/jsp/exercise/exercise.jsp</result>
+			<result name="exercise1">/jsp/exercise/exercise1.jsp</result>
+			<result name="exercise2">/jsp/exercise/exercise2.jsp</result>
+			<result name="exercise3">/jsp/exercise/exercise3.jsp</result>
+			<result name="exercise4">/jsp/exercise/exercise4.jsp</result>
+			<result name="exercise5">/jsp/exercise/exercise5.jsp</result>
+			<result name="exercise6">/jsp/exercise/exercise6.jsp</result>
+			<result name="exercise7">/jsp/exercise/exercise7.jsp</result>
+			<result name="exercise8">/jsp/exercise/exercise8.jsp</result>
+			<result name="exercise9">/jsp/exercise/exercise9.jsp</result>
+			<result name="exercise10">/jsp/exercise/exercise10.jsp</result>
+			<result name="exercise11">/jsp/exercise/exercise11.jsp</result>
+			<result name="exercise12">/jsp/exercise/exercise12.jsp</result>
+			<result name="exercise13">/jsp/exercise/exercise13.jsp</result>
+		</action>
+	
+		<!-- 修改基本信息跳转 -->
+		<action name="editBasicInfo" method="editBasicInfo" class="BasicInfoAction">
+			<result name="success">/jsp/introduction/editBasicInfo.jsp</result>
+		</action>
+		
+		<!-- 修改基本信息确认 -->
+		<action name="updateBasicInfo" method="updateBasicInfo" class="BasicInfoAction">
+			<result name="success"></result>
+			<result name="error">error/error.jsp</result>
+		</action>		
+		
+		<!-- 授课教案-->
+		<action name="listTeachingPlan" method="findTeachingPlanList" class="teachingPlanAction">
+			<result name="success">/jsp/course/courseware.jsp</result>
+			<result name="error">error/error.jsp</result>	
+		</action>		
+
+		<!-- 删除教案-->
+		<action name="deleteTeaching" method="deleteTeachingPlan" class="teachingPlanAction">
+			<result name="success"></result>
+			<result name="error">error/error.jsp</result>	
+		</action>	
+
+		<!-- 增加教案-->
+		<action name="addTeaching" method="insertTeachingPlan" class="teachingPlanAction">
+			<result name="success">/jsp/course/courseware.jsp</result>
+			<result name="error">error/error.jsp</result>	
+		</action>		
+		
+		<!-- 教学视频-->
+		<action name="listSpChapter" method="findSpChapterList" class="spChapterAction">
+			<result name="success">/jsp/video/video.jsp</result>
+			<result name="error">error/error.jsp</result>	
+		</action>	
+				
+		<!-- 视频章节查看-->
+		<action name="videoShow" method="findSpChapter" class="spChapterAction">
+			<result name="success">/jsp/video/videoDetail.jsp</result>
+			<result name="error">error/error.jsp</result>	
+		</action>			
+		
+			<!-- 视频播放处理-->
+		<action name="pauseSchedule" method="pauseSchedule" class="courseScheduleAction">
+			<result name="success"></result>
+			<result name="error">error/error.jsp</result>	
+		</action>	
+		
+
+
+		<!-- 系统配置表-->
+		<action name="listConfigInfo" method="findConfigInfoList" class="configInfoAction">
+			<result name="success"></result>
+			<result name="error">error/error.jsp</result>	
+		</action>	
+
+		<!-- 系统配置表-->
+		<action name="editConfigInfo" method="editConfigInfo" class="configInfoAction">
+			<result name="success"></result>
+			<result name="error">error/error.jsp</result>	
+		</action>
+
+	</package>
+
+</struts>
+

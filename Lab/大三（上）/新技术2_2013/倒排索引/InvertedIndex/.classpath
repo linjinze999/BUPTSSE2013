@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<classpath>
+	<classpathentry kind="src" path="src"/>
+	<classpathentry kind="con" path="org.eclipse.jdt.launching.JRE_CONTAINER"/>
+	<classpathentry kind="lib" path="/home/linjinze/hadoop_tar/hadoop-0.20.203.0/hadoop-core-0.20.203.0.jar"/>
+	<classpathentry kind="lib" path="/home/linjinze/hadoop_tar/hadoop-0.20.203.0/lib/commons-logging-1.1.1.jar"/>
+	<classpathentry kind="lib" path="/home/linjinze/hadoop_tar/hadoop-0.20.203.0/lib/commons-configuration-1.6.jar"/>
+	<classpathentry kind="lib" path="/home/linjinze/hadoop_tar/hadoop-0.20.203.0/lib/commons-lang-2.4.jar"/>
+	<classpathentry kind="lib" path="/home/linjinze/hadoop_tar/hadoop-0.20.203.0/lib/jackson-mapper-asl-1.0.1.jar"/>
+	<classpathentry kind="lib" path="/home/linjinze/hadoop_tar/hadoop-0.20.203.0/lib/jackson-core-asl-1.0.1.jar"/>
+	<classpathentry kind="lib" path="/home/linjinze/hadoop_tar/hadoop-0.20.203.0/lib/commons-httpclient-3.0.1.jar"/>
+	<classpathentry kind="output" path="bin"/>
+</classpath>

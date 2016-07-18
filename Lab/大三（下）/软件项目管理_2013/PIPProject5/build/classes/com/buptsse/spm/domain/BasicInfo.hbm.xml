@@ -1,0 +1,15 @@
+<?xml version="1.0"?>
+<!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+"http://www.hibernate.org/dtd/hibernate-mapping-3.0.dtd">
+<hibernate-mapping package="com.buptsse.spm.domain">
+	<class name="BasicInfo" table="basicinfo">
+		<cache usage="read-write" /> <!-- 缓存 -->
+		<id name="idCourseInfo" column="idcourseinfo" type="int">
+			<generator class="increment"/>
+		</id>
+		<property name="name" column="name" length="50"
+			type="string" />
+		<property name="content" column="content" length="10000"
+			type="string" />
+	</class>
+</hibernate-mapping>

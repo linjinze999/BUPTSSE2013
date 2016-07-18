@@ -1,0 +1,84 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE beans PUBLIC "-//SPRING//DTD BEAN 2.0//EN" "http://www.springframework.org/dtd/spring-beans-2.0.dtd">
+<beans default-autowire="byName" default-lazy-init="true">
+
+	
+	<!-- 	 	配置UserLoginAction -->
+	<bean id="UserLoginAction" scope="prototype" class="com.buptsse.spm.action.UserLoginAction"/>
+	
+	<!-- 	 	配置UserAllAction -->
+	<bean id="UserAllAction" scope="prototype" class="com.buptsse.spm.action.UserAllAction"/>
+	
+	<!-- 	 	配置RolePagesAction -->
+	<bean id="PageRoleAction" scope="prototype" class="com.buptsse.spm.action.PageRoleAction"/>
+	
+	<!-- 	 	配置PageAction -->
+	<bean id="PageAction" scope="prototype" class="com.buptsse.spm.action.PageAction"/>
+	
+	<!-- 	 	配置NoticeAction -->
+	<bean id="NoticeAction" scope="prototype" class="com.buptsse.spm.action.NoticeAction"/>
+	
+	<!-- 	 	配置TeamAction -->
+	<bean id="TeamAction" scope="prototype" class="com.buptsse.spm.action.TeamAction"/>
+	
+	<!-- 	 	配置TaskSubmitAction -->
+	<bean id="TaskSubmitAction" scope="prototype" class="com.buptsse.spm.action.TaskSubmitAction"/>
+	
+	<!-- 	 	配置TaskEvaluatingAction -->
+	<bean id="TaskEvaluatingAction" scope="prototype" class="com.buptsse.spm.action.TaskEvaluatingAction"/>
+	
+	<!-- 	 	配置ArgumentAction -->
+	<bean id="MyArgumentAction" scope="prototype" class="com.buptsse.spm.action.MyArgumentAction"/>
+	
+	
+	
+	
+	
+	
+	
+	<!-- 	 	配置LoginAction -->
+	<bean id="LoginAction" scope="prototype" class="com.buptsse.spm.action.LoginAction"/>
+	
+	<!-- 	配置registerAction -->
+	<bean id="RegisterAction" scope="prototype" class="com.buptsse.spm.action.RegisterAction"/>
+	 
+	<!-- 	 	配置BasicInfoAction -->
+	<bean id="BasicInfoAction" scope="prototype" class="com.buptsse.spm.action.BasicInfoAction"/>
+	
+	<!--课程信息处理 -->
+	<bean id="courseAction" scope="prototype" class="com.buptsse.spm.action.CourseAction"/>
+	
+	<!--邮件信息处理 -->
+	<bean id="emailAction" scope="prototype" class="com.buptsse.spm.action.EmailAction"/>		
+
+	<!--上传文件 -->
+	<bean id="uploadAction" scope="prototype" class="com.buptsse.spm.action.UploadAction"/>	
+	
+	
+	<!--留言板处理 -->
+	<bean id="messageAction" scope="prototype" class="com.buptsse.spm.action.MessageAction"/>		
+	
+	
+	<!-- 在线测试 -->
+	<bean id="examAction" scope="prototype" class="com.buptsse.spm.action.ExamAction"/>	
+	
+	
+	<!-- 行业信息 -->
+	<bean id="tradeInfoAction" scope="prototype" class="com.buptsse.spm.action.TradeInfoAction"/>		
+	
+	<!-- 下载区 -->
+	<bean id="downLoadAction" scope="prototype" class="com.buptsse.spm.action.DownLoadAction"/>	
+
+	<!-- 教学计划 -->
+	<bean id="teachingPlanAction" scope="prototype" class="com.buptsse.spm.action.TeachingPlanAction"/>		
+	
+	<!-- 视频 -->
+	<bean id="spChapterAction" scope="prototype" class="com.buptsse.spm.action.SpChapterAction"/>		
+		
+	<!-- 视频播放 -->
+	<bean id="courseScheduleAction" scope="prototype" class="com.buptsse.spm.action.CourseScheduleAction"/>
+
+	<!-- 系统配置表 -->
+	<bean id="configInfoAction" scope="prototype" class="com.buptsse.spm.action.ConfigInfoAction"/>	
+	
+</beans>

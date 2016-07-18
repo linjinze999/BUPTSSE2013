@@ -1,0 +1,174 @@
+body {
+	font-family: "Microsoft YaHei";
+}
+
+.title1 {
+	font-family: "宋体";
+	font-size: 20px;
+	font-weight:bold;
+	word-break:break-all;
+}
+
+.text1 {
+	font-family: "Microsoft YaHei";
+	font-size: 12px;
+}
+
+.article {
+	margin-top:20px;
+	margin-right:100px;
+	margin-left:20px;
+	margin-bottom:50px;
+}
+.headline {
+	font-size: 30px;
+	text-align: center;
+	color:#000000;
+	font-weight: bold;
+	line-height: 400%;
+}
+.article h1 {
+	font-size: 28px;
+	color: #00a1f1;
+	border-bottom: 1px solid #b6d9e8;
+	line-height: 50px;
+	word-break:break-all;
+}
+.choose{
+	height:30px;
+	width:500px;
+	margin-bottom:10px;
+}
+.question{
+	height:30px;
+	width:800px;
+}
+.line{
+	margin-top:10px;
+	margin-bottom:10px;
+	border-bottom: 1px solid #DDD;
+}
+.content2{
+  border: 0px solid #b6d9e8;
+  padding-left: 10px;
+  padding-right: 10px;
+  font-size: 18px;
+  color: #87cefa;
+  line-height: 300%;
+  background-color:#f2fdff;
+}
+.content3{
+  border: 0px solid #b6d9e8;
+  padding-left: 10px;
+  padding-right: 10px;
+  font-size: 18px;
+  color: #87cefa;
+  line-height: 300%;
+  background-color:#faebd7;
+}
+.content h2 {
+	color: #000000;
+	font-size:17px;
+	font-weight: bold;
+	line-height: 200%;
+	border-bottom: 1px solid #DDD;
+}
+.content h3 {
+	color: #000000;
+	font-size:15px;
+	line-height: 200%;
+}
+#article_h1 {
+	font-size: 20px;
+	text-align: center;
+	line-height: 30px;
+	padding: 10px 0;
+}
+
+.time {
+	text-align: center;
+	color: #666;
+	padding: 10px 0;
+}
+
+.content {
+	line-height: 180%;
+}
+
+.content date{
+	color: #000000;
+	font-size:5px;
+	font-family: "Microsoft YaHei";
+	line-height: 200%;
+}
+
+.content h4 {
+	color: #00a1f1;
+	font-weight: bold;
+	line-height: 200%;
+	border-bottom: 1px solid #DDD;
+}
+
+.content p {
+	line-height: 150%;
+	font-size: 14px;
+	color: #444;
+	padding: 0px 0;
+	font-family: "Microsoft YaHei";
+}
+.content a {
+	color:#00a1f1;
+	text-decoration: none;
+}
+
+.content table {
+	
+}
+.buttonStyle{
+  width:200px;
+  height:50px;
+}
+.button{
+ backgrounf-color:;
+ 
+}
+.content table td,.content table th {
+	padding: 5px;
+}
+h5{
+font-size: 20px;
+	color: #00a1f1;
+	border-bottom: 1px solid #b6d9e8;
+	line-height: 30px;
+}
+
+h2{
+font-size: 20px;
+	color: #00a1f1;
+/* 	border-bottom: 1px solid #b6d9e8; */
+	line-height: 30px;
+}
+
+h6{
+color: #000000;
+	font-size:17px;
+	font-weight: bold;
+	line-height: 200%;
+	border-bottom: 1px solid #DDD;
+	margin-bottom:10px;
+}
+.btn{
+  color:#333;
+  background-color:#fff;
+  border-width: 1px;
+  border-color:#53C7D8;
+  padding:6px 12px;
+  border: 1px solid transparent;
+  margin-top: 10px;
+  margin-bottom: 10px;
+}
+.btn-default{
+  border-color:#53C7D8;
+  font-family: "Microsoft YaHei";
+  font-size:15px;
+}
